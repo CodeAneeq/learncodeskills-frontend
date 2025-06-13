@@ -2,27 +2,21 @@ import React, { useContext, useState } from "react";
 import styles from "./Navbar.module.scss";
 import { NavLink } from "react-router-dom";
 // import Sidebar from "../sidebar/sidebar";
-// import {sidebarContext}  from '../../contexts/sidebar.context'
 // import GlobalSearch from "../searchBar/search-bar";
-// import ShoppingCart from "../cart/shopping-cart";
 import { useDispatch, useSelector } from "react-redux";
-// import { removeUser } from "../../redux/features/user-slice";
 import profileImg from '../../assets/imgs/profileImg.jpeg'
 import logo from '../../assets/imgs/logo.png'
 import PrimaryBtn from "../buttons/PrimaryBtn";
-// import useShoppingCart from "../../hooks/use-shopping-cart";
+import { removeUser } from "../../redux/features/UserSlice";
 
 export const Navbar = () => {
-//  const { clearCart } = useShoppingCart();
-  // const {is_sidebar, sidebarOpen} = useContext(sidebarContext)
-  // const isLogin = useSelector(state => state.user.isLogin);
-  // const isAdmin = useSelector(state => state.user.data.role);
-  // const dispatch = useDispatch()
+  const isLogin = useSelector(state => state.user.isLogin);
+  const isInstructor = useSelector(state => state.user.data.role);
+  const dispatch = useDispatch()
   // console.log(isLogin)
-  // const signOut = () => {
-  //   dispatch(removeUser());
-  //   clearCart()
-  // }
+  const signOut = () => {
+    dispatch(removeUser());
+  }
   return (
     <>
      {/* <Sidebar></Sidebar> */}
@@ -46,7 +40,9 @@ export const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse d-none" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li className="nav-item mx-3">
+            {
+              isLogin && isInstructor == 'instructor' ? (<>
+            </>) : (<> <li className="nav-item mx-3">
             <NavLink to='/' className={`nav-link active ${styles.nav_link_item}`}>Home</NavLink>
             </li>
             <li className="nav-item mx-3">
@@ -57,28 +53,17 @@ export const Navbar = () => {
             </li>
             <li className="nav-item mx-3">
             <NavLink to='/about' className={`nav-link active ${styles.nav_link_item}`}>My Learning</NavLink>
-            </li>
-            {/* {
-              isLogin ? isAdmin == 'admin' ? 
-            <li className="nav-item mx-3">
-            <NavLink to='/admin/dashboard' className={`nav-link active ${styles.nav_link_item}`}>Dashboard</NavLink>
-            </li> : 
-            <li className="nav-item mx-3">
-            <NavLink to='/my-orders' className={`nav-link active ${styles.nav_link_item}`}>My Orders</NavLink>
-            </li> : ""
-            } */}
+            </li></>)
+            }
           </ul>
            <div className={`${styles.profile_img_div}`}>
             <img src={profileImg} className={`${styles.img}`}></img>
           </div>
           <form className="d-flex align-items-center gap-4" role="search"> 
-           {/* <NavLink to={isLogin ? '' : '/auth/signup'}>
-              <PrimaryBtn onClick={isLogin ? signOut : ""}>
+           <NavLink to={isLogin ? '' : '/auth/signup'}>
+              <PrimaryBtn onClick={isLogin ? signOut : undefined}>
                 {isLogin ? "Sign Out" : "Sign Up"}
               </PrimaryBtn>
-           </NavLink> */}
-           <NavLink>
-            <PrimaryBtn>Sign in</PrimaryBtn>
            </NavLink>
           </form>
         </div>
@@ -89,3 +74,12 @@ export const Navbar = () => {
 };
 
 export default Navbar;
+ {/* // { */}
+            //   isLogin ? isInstructor == 'instructor' ? 
+            // <li className="nav-item mx-3">
+            // <NavLink to='/admin/dashboard' className={`nav-link active ${styles.nav_link_item}`}>Dashboard</NavLink>
+            // </li> : 
+            // <li className="nav-item mx-3">
+            // <NavLink to='/my-orders' className={`nav-link active ${styles.nav_link_item}`}>My Orders</NavLink>
+            // </li> :
+            // }

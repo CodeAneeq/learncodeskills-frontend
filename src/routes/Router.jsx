@@ -116,7 +116,7 @@ export const privateRoutes = createBrowserRouter([
 export const instructorRoutes = createBrowserRouter([
      {
         path: '/',
-        element: <Suspense fallback={<Loader></Loader>}><HomePage/></Suspense>
+        element: <Suspense fallback={<Loader></Loader>}><DashboardPage/></Suspense>
     },
     {
         path: "/profile/instructor",
@@ -131,7 +131,7 @@ export const instructorRoutes = createBrowserRouter([
         element: <Suspense fallback={<Loader></Loader>}><AddCoursePage/></Suspense>
     },
     {
-        path: '/instructor/add-lecture',
+        path: '/instructor/add-lecture/:id',
         element: <Suspense fallback={<Loader></Loader>}><AddLecturePage/></Suspense>
     },
     {

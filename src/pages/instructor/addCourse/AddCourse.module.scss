@@ -1,0 +1,167 @@
+@import "../../../theme.scss";
+
+.add_course_container {
+  display: flex;
+  gap: 30px;
+  min-height: 100vh;
+
+  .topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap; // Optional for responsiveness
+
+  @media (max-width: 530px) {
+    display: block;
+  }
+
+  .headingGroup {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin: 0;
+    }
+
+    p {
+      margin: 5px 0 0 0;
+      color: $lightText;
+    }
+  }
+
+  .btns {
+    display: flex;
+    gap: 10px;
+
+    .btn {
+      width: 60%;
+    }
+    
+  @media (max-width: 530px) {
+    margin-top: 20px;
+  }
+  }
+}
+
+  
+  .sidebar {
+    // height: 100%;
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  .content {
+    margin-top: 50px;
+    color: $darkText;
+    margin-bottom: 50px;
+
+    .main_course_box {
+      > h6 {
+        margin-bottom: 0px;
+      }
+      > p {
+        color: $lightText;
+      }
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      margin-top: 30px;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 7px;
+      background-color: $secondary;
+
+      .inputs_div {
+        .desc_text_area {
+          padding: 10px;
+          width: 100%;
+          min-height: 100px;
+          background: transparent;
+          border: 1px solid $lightText;
+          border-radius: 5px;
+          color: white;
+        }
+
+        .two_option{
+            display: flex;
+            width: 100%;
+            gap: 30px;
+            margin-top: 10px;
+            // justify-content: space-between;
+            .form_group {
+            //   width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+              margin-top: 20px;
+    
+              label {
+                color: white;
+                // font-weight: 500;
+                font-size: 16px;
+              }
+    
+              .custom_select {
+                width: 100%;
+                padding: 6px 10px;
+                background-color: transparent !important;
+                color: white;
+                border: 1px solid $lightText; // Tumhara theme variable
+                border-radius: 5px;
+                font-size: 15px;
+    
+                option {
+                  background-color: $lightText; // dark backgroun
+                  color: white;
+                }
+    
+                &:focus {
+                  outline: none;
+                  border-color: #4e9eff; // light blue glow or your theme color
+                  box-shadow: 0 0 4px #4e9eff;
+                }
+              }
+            }
+        }
+
+                .thumbnail_input_container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .input_label {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .custom_file_input {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid $lightText; // use your theme variable
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+
+    &::file-selector-button {
+    background-color: $primary;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $accent;
+      }
+    }
+  }
+}
+      }
+    }
+  }
+}

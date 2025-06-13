@@ -121,12 +121,12 @@ const SignUpPage = () => {
               <input
                 type="radio"
                 name="role"
-                value="recruiter"
+                value="instructor"
                 className={`me-2 ${styles.label_two}`}
-                checked={role === "recruiter"}
+                checked={role === "instructor"}
                 onChange={(e) => setRole(e.target.value)}
               />
-              Recruiter
+              Instructor
             </label>
           </div>
 

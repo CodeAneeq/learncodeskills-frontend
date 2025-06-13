@@ -4,6 +4,7 @@ import { TextInput } from '../inputs/TextInput'
 import QRcode from '../../assets/imgs/Qr-Code.png'
 import playStore from '../../assets/imgs/GooglePlay.png'
 import appStore from '../../assets/imgs/AppStore.png'
+import logo from '../../assets/imgs/logo.png'
 // import facebooklIcon from '../../assets/icons/Icon-Facebook.svg'
 // import instagramlIcon from '../../assets/icons/icon-instagram.svg'
 // import linkedinlIcon from '../../assets/icons/Icon-Linkedin.svg'
@@ -16,7 +17,7 @@ const Footer = () => {
       <div className="container">
         <div className="row mt-5 mb-5">
           <div className="col-12 col-md-3 mb-4 mb-md-0">
-            <figure className='text-light text-start mb-3'><img src='' alt="" /></figure>
+            <figure className='text-light text-start mb-3'><img src={logo} alt="" /></figure>
             {/* <figure className='text-light text-start mb-3'><img src={CodeMartBlack} alt="" /></figure> */}
             <h6 className='text-light text-start mb-3'>Subscribe</h6>
             <p className='text-light text-start mb-3'>Get 10% off your first order</p>

@@ -1,5 +1,9 @@
 @import 'theme.scss';
 
+body{
+    height: 100vh;
+}
+
 // avoid bootsrap styles
 .form-control:focus {
     background-color: transparent !important;

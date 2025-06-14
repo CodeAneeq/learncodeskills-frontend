@@ -13,6 +13,7 @@ const ErrorPage = lazy(() => import("../pages/error/NotFound"));
 const InstructorProfile = lazy(() => import("../pages/profile/instructor/InstructorProfile"));
 const CourseDetailsPage = lazy(() => import("../pages/course/courseDetails/CourseDetails"));
 const CourseLecturePage = lazy(() => import("../pages/course/courseLecture/CourseLecture"));
+const AllCoursesPage = lazy(() => import("../pages/course/allCourses/AllCourses"));
 const CourseFilterPage = lazy(() => import("../pages/course/courseFilter/CourseFilter"));
 const BuyCourse = lazy(() => import("../pages/course/buyCourse/BuyCourse"));
 const MyLearning = lazy(() => import("../pages/myLearning/MyLearning"));
@@ -60,6 +61,10 @@ export const publicRoutes = createBrowserRouter([
         path: '/course-details/:id',
         element: <Suspense fallback={<Loader></Loader>}><CourseDetailsPage/></Suspense>
     },
+    {
+        path: '/courses',
+        element: <Suspense fallback={<Loader></Loader>}><AllCoursesPage/></Suspense>
+    },
      {
         path: '/course-lecture/:id',
         element: <Suspense fallback={<Loader></Loader>}><CourseLecturePage/></Suspense>
@@ -90,6 +95,10 @@ export const privateRoutes = createBrowserRouter([
     {
         path: '/course-lecture/:id',
         element: <Suspense fallback={<Loader></Loader>}><CourseLecturePage/></Suspense>
+    },
+    {
+        path: '/courses',
+        element: <Suspense fallback={<Loader></Loader>}><AllCoursesPage/></Suspense>
     },
     {
         path: '/course-filter',

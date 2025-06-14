@@ -60,7 +60,7 @@ export const Navbar = () => {
             <img src={profileImg} className={`${styles.img}`}></img>
           </div>
           <form className="d-flex align-items-center gap-4" role="search"> 
-           <NavLink to={isLogin ? '' : '/auth/signup'}>
+           <NavLink to={isLogin ? '' : '/auth/sign-up'}>
               <PrimaryBtn onClick={isLogin ? signOut : undefined}>
                 {isLogin ? "Sign Out" : "Sign Up"}
               </PrimaryBtn>

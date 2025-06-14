@@ -33,9 +33,10 @@
   .btns {
     display: flex;
     gap: 10px;
+    width: 50%;
 
     .btn {
-      width: 60%;
+      width: 100%;
     }
     
   @media (max-width: 530px) {

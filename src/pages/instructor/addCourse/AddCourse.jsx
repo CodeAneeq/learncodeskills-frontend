@@ -14,25 +14,28 @@ const AddCourse = () => {
   const [subTitle, setSubTitle] = useState("");
   const [description, setDescription] = useState("");
   const [authError, setAuthError] = useState("");
-  const [loader, setLoader] = useState(false);
-  const [role, setRole] = useState("student");
+ const [publishLoading, setPublishLoading] = useState(false);
+const [draftLoading, setDraftLoading] = useState(false);
+const [language, setLanguage] = useState("");
+  const [status, setStatus] = useState("draft");
   const [thumbnail, setThumbnail] = useState(null); // ✅ new state
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState(""); // ✅ new state
   const [level, setLevel] = useState(""); // ✅ new state
   const navigate = useNavigate()
 
-  const createCourse = async (e) => {
-    e.preventDefault();
+  const createCourse = async (setLoader) => {
+    setLoader(true)
     try {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("subTitle", subTitle);
       formData.append("description", description);
-      formData.append("role", role);
       formData.append("level", level);
       formData.append("price", price);
       formData.append("category", category);
+      formData.append("language", language);
+      formData.append("status", status);
       if (thumbnail) formData.append("thumbnail", thumbnail);
       let token = localStorage.getItem("token");
       const response = await axios.post(
@@ -47,7 +50,7 @@ const AddCourse = () => {
       );
       let courseId = response?.data?.data?._id;
       console.log(courseId);
-      setLoader(false);
+      // setLoader(false);
       navigate(`/instructor/add-lecture/${courseId}`);
     } catch (error) {
       setAuthError(error?.response?.data?.message);
@@ -77,10 +80,14 @@ const AddCourse = () => {
             </div>
             <div className={`${styles.btns}`}>
               <div className={`${styles.btn}`}>
-                <PrimaryBtn>Publish</PrimaryBtn>
+                <PrimaryBtn  loading={publishLoading}
+              disabled={publishLoading}
+              type="button" onClick={() => {setStatus("published"); createCourse(setPublishLoading);}}>Publish</PrimaryBtn>
               </div>
               <div className={`${styles.btn}`}>
-                <PrimaryBtn onClick={createCourse}>Draft</PrimaryBtn>
+                <PrimaryBtn  loading={draftLoading}
+              disabled={draftLoading}
+              type="button" onClick={() => {createCourse(setDraftLoading)}}>Draft</PrimaryBtn>
               </div>
             </div>
           </div>
@@ -124,6 +131,10 @@ const AddCourse = () => {
                 <div>
                   <label style={{ marginTop: "20px" }}>Price in PKR</label>
                   <ContactInput name={price} value={price} onChange={(e) => setPrice(e.target.value)} placeholder={"Enter Price"} />
+                </div>
+                <div>
+                  <label style={{ marginTop: "20px" }}>Course Language</label>
+                  <ContactInput name={language} value={language} onChange={(e) => setLanguage(e.target.value)} placeholder={"Enter Price"} />
                 </div>
               </div>
               {/* ✅ Profile Image Upload */}

@@ -14,8 +14,8 @@ const CourseFilter = () => {
     language: ""
   })
 const [courses, setCourses] = useState([]);
-const [allCourses, setAllCourses] = useState([]);
 const [hasSearched, setHasSearched] = useState(false);
+const [allCourses, setAllCourses] = useState([]);
 const [users, setUsers] = useState([]);
 
   const filterCourses = async () => {

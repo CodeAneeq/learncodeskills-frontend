@@ -1,12 +1,46 @@
-# React + Vite
+# Learn Code Skills (LMS) - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend part of the **Learn Code Skills LMS (Learning Management System)** project.  
+Built using **React.js**, it offers an interactive and responsive user interface for learners.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React.js
+- SCSS / CSS
+- Axios (For API calls)
+- React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Features
+
+- User-friendly course browsing
+- Dynamic course listings
+- Authentication-ready UI
+- Responsive design for mobile and desktop
+
+---
+
+## 🚀 Live Demo
+
+**Currently Not Available**  
+(Live demo will be added once backend deployment is complete)
+
+---
+
+## 📂 Backend Repository
+
+> You can find the backend code here:  
+👉 [Learn Code Skills - Backend Repository](https://github.com/CodeAneeq/learncodeskills-backend)
+
+---
+
+## 👨‍💻 How to Run Locally
+
+```bash
+git clone https://github.com/CodeAneeq/learncodeskills-frontend.git
+cd learncodeskills-frontend
+npm install
+npm start

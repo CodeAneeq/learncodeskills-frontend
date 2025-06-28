@@ -33,7 +33,7 @@ Built using **React.js**, it offers an interactive and responsive user interface
 ## 📂 Backend Repository
 
 > You can find the backend code here:  
-👉 [Learn Code Skills - Backend Repository](https://github.com/CodeAneeq/learncodeskills-backend)
+👉 [Learn Code Skills - Backend Repository](https://github.com/CodeAneeq/learncodeskills-server)
 
 ---
 
